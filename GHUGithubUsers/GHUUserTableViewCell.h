@@ -12,7 +12,7 @@
 
 @interface GHUUserTableViewCell : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet UIImageView *foto;
+@property (weak, nonatomic) IBOutlet UIButton *foto;
 @property (weak, nonatomic) IBOutlet UILabel *login;
 @property (weak, nonatomic) IBOutlet GHULinkButton *link;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *downloadIndicator;

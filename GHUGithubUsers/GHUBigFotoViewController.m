@@ -1,0 +1,41 @@
+//
+//  GHUBigFotoViewController.m
+//  GHUGithubUsers
+//
+//  Created by Dmytro Omelchuk on 4/6/15.
+//  Copyright (c) 2015 Dmytro Omelchuk. All rights reserved.
+//
+
+#import "GHUBigFotoViewController.h"
+
+@interface GHUBigFotoViewController ()
+
+@property (weak, nonatomic) IBOutlet UIImageView *fotoView;
+
+@end
+
+@implementation GHUBigFotoViewController
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+
+	self.fotoView.image = self.foto;
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
+
+@end

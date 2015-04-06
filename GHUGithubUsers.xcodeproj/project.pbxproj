@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1AA682C71AD2C5BE00C6FC1D /* GHUBigFotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AA682C61AD2C5BE00C6FC1D /* GHUBigFotoViewController.m */; };
 		1AC1EA621AD28F8D000C063D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC1EA611AD28F8D000C063D /* main.m */; };
 		1AC1EA651AD28F8D000C063D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC1EA641AD28F8D000C063D /* AppDelegate.m */; };
 		1AC1EA6B1AD28F8D000C063D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AC1EA691AD28F8D000C063D /* Main.storyboard */; };
@@ -29,6 +30,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1AA682C51AD2C5BE00C6FC1D /* GHUBigFotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHUBigFotoViewController.h; sourceTree = "<group>"; };
+		1AA682C61AD2C5BE00C6FC1D /* GHUBigFotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHUBigFotoViewController.m; sourceTree = "<group>"; };
 		1AC1EA5C1AD28F8D000C063D /* GHUGithubUsers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GHUGithubUsers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AC1EA601AD28F8D000C063D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1AC1EA611AD28F8D000C063D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -93,6 +96,8 @@
 				1ADE88EE1AD2944500BFCCE7 /* GHUUsersTableViewController.m */,
 				1ADE88F31AD29ECE00BFCCE7 /* GHUUserTableViewCell.h */,
 				1ADE88F41AD29ECE00BFCCE7 /* GHUUserTableViewCell.m */,
+				1AA682C51AD2C5BE00C6FC1D /* GHUBigFotoViewController.h */,
+				1AA682C61AD2C5BE00C6FC1D /* GHUBigFotoViewController.m */,
 				1ADE88F61AD2A80D00BFCCE7 /* GHULinkButton.h */,
 				1ADE88F71AD2A80D00BFCCE7 /* GHULinkButton.m */,
 				1AC1EA691AD28F8D000C063D /* Main.storyboard */,
@@ -229,6 +234,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AA682C71AD2C5BE00C6FC1D /* GHUBigFotoViewController.m in Sources */,
 				1ADE88EF1AD2944500BFCCE7 /* GHUUsersTableViewController.m in Sources */,
 				1ADE88F81AD2A80D00BFCCE7 /* GHULinkButton.m in Sources */,
 				1AC1EA651AD28F8D000C063D /* AppDelegate.m in Sources */,
