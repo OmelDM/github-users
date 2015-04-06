@@ -25,12 +25,6 @@
                                                 <constraint firstAttribute="height" constant="100" id="Qyj-2c-jIr"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="link" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JwV-Ui-giP">
-                                            <rect key="frame" x="116" y="40" width="476" height="18"/>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="login" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Fw-gT-Ym5">
                                             <rect key="frame" x="116" y="8" width="476" height="24"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
@@ -40,24 +34,31 @@
                                         <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="H9y-AT-xlQ">
                                             <rect key="frame" x="50" y="50" width="20" height="20"/>
                                         </activityIndicatorView>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UVB-hh-0Le" customClass="GHULinkButton">
+                                            <rect key="frame" x="116" y="40" width="476" height="29"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                            <state key="normal" title="link">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                        </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="H9y-AT-xlQ" firstAttribute="top" secondItem="xYc-Mf-7Xa" secondAttribute="top" constant="50" id="1ON-8b-foo"/>
-                                        <constraint firstItem="JwV-Ui-giP" firstAttribute="leading" secondItem="Zs3-51-EV7" secondAttribute="trailing" constant="8" id="8lg-EB-CK0"/>
+                                        <constraint firstItem="UVB-hh-0Le" firstAttribute="top" secondItem="1Fw-gT-Ym5" secondAttribute="bottom" constant="8" id="6z6-Tw-GkM"/>
                                         <constraint firstItem="Zs3-51-EV7" firstAttribute="leading" secondItem="xYc-Mf-7Xa" secondAttribute="leading" constant="8" id="P68-lj-AR7"/>
                                         <constraint firstItem="1Fw-gT-Ym5" firstAttribute="top" secondItem="xYc-Mf-7Xa" secondAttribute="top" constant="8" id="QzA-Ro-Pr0"/>
                                         <constraint firstItem="H9y-AT-xlQ" firstAttribute="leading" secondItem="xYc-Mf-7Xa" secondAttribute="leading" constant="50" id="R2T-2M-bPH"/>
-                                        <constraint firstAttribute="trailing" secondItem="JwV-Ui-giP" secondAttribute="trailing" constant="8" id="Vau-UZ-oyB"/>
-                                        <constraint firstItem="JwV-Ui-giP" firstAttribute="top" secondItem="1Fw-gT-Ym5" secondAttribute="bottom" constant="8" id="Waw-0T-zqH"/>
+                                        <constraint firstItem="UVB-hh-0Le" firstAttribute="leading" secondItem="Zs3-51-EV7" secondAttribute="trailing" constant="8" id="WVw-fG-qbX"/>
                                         <constraint firstItem="1Fw-gT-Ym5" firstAttribute="leading" secondItem="Zs3-51-EV7" secondAttribute="trailing" constant="8" id="ZCQ-fN-WMb"/>
                                         <constraint firstAttribute="trailing" secondItem="1Fw-gT-Ym5" secondAttribute="trailing" constant="8" id="ddc-nU-O4b"/>
                                         <constraint firstItem="Zs3-51-EV7" firstAttribute="top" secondItem="xYc-Mf-7Xa" secondAttribute="top" id="gTF-tH-Uda"/>
+                                        <constraint firstAttribute="trailing" secondItem="UVB-hh-0Le" secondAttribute="trailing" constant="8" id="mz2-Oy-FnB"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="downloadIndicator" destination="H9y-AT-xlQ" id="Hgh-Sl-TYW"/>
                                     <outlet property="foto" destination="Zs3-51-EV7" id="bly-bt-GG1"/>
-                                    <outlet property="link" destination="JwV-Ui-giP" id="jVT-un-sUa"/>
+                                    <outlet property="link" destination="UVB-hh-0Le" id="e5t-UE-EKE"/>
                                     <outlet property="login" destination="1Fw-gT-Ym5" id="3vY-ed-QtJ"/>
                                 </connections>
                             </tableViewCell>

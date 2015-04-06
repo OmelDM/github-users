@@ -8,6 +8,7 @@
 
 #import "GHUUsersTableViewController.h"
 #import "GHUUserTableViewCell.h"
+#import "GHULinkButton.h"
 
 NSString *const kGithubUsersLink = @"https://api.github.com/users";
 
@@ -87,7 +88,11 @@ NSString *const kGithubUsersLink = @"https://api.github.com/users";
 	NSDictionary *theUser = self.users[anIndexPath.row];
 	
 	theCell.login.text = theUser[@"login"];
-	theCell.link.text = theUser[@"html_url"];
+	NSString *theLink = theUser[@"html_url"];
+	[theCell.link setTitle:theLink forState:UIControlStateNormal];
+	theCell.link.link = [NSURL URLWithString:theLink];
+
+	
 	[theCell.downloadIndicator startAnimating];
 	
 	[[[NSURLSession sharedSession] dataTaskWithURL:[NSURL URLWithString:theUser[@"avatar_url"]]

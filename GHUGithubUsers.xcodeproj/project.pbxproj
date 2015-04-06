@@ -15,6 +15,7 @@
 		1AC1EA7C1AD28F8E000C063D /* GHUGithubUsersTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC1EA7B1AD28F8E000C063D /* GHUGithubUsersTests.m */; };
 		1ADE88EF1AD2944500BFCCE7 /* GHUUsersTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ADE88EE1AD2944500BFCCE7 /* GHUUsersTableViewController.m */; };
 		1ADE88F51AD29ECE00BFCCE7 /* GHUUserTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ADE88F41AD29ECE00BFCCE7 /* GHUUserTableViewCell.m */; };
+		1ADE88F81AD2A80D00BFCCE7 /* GHULinkButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ADE88F71AD2A80D00BFCCE7 /* GHULinkButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,8 @@
 		1ADE88EE1AD2944500BFCCE7 /* GHUUsersTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHUUsersTableViewController.m; sourceTree = "<group>"; };
 		1ADE88F31AD29ECE00BFCCE7 /* GHUUserTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHUUserTableViewCell.h; sourceTree = "<group>"; };
 		1ADE88F41AD29ECE00BFCCE7 /* GHUUserTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHUUserTableViewCell.m; sourceTree = "<group>"; };
+		1ADE88F61AD2A80D00BFCCE7 /* GHULinkButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHULinkButton.h; sourceTree = "<group>"; };
+		1ADE88F71AD2A80D00BFCCE7 /* GHULinkButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHULinkButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +93,8 @@
 				1ADE88EE1AD2944500BFCCE7 /* GHUUsersTableViewController.m */,
 				1ADE88F31AD29ECE00BFCCE7 /* GHUUserTableViewCell.h */,
 				1ADE88F41AD29ECE00BFCCE7 /* GHUUserTableViewCell.m */,
+				1ADE88F61AD2A80D00BFCCE7 /* GHULinkButton.h */,
+				1ADE88F71AD2A80D00BFCCE7 /* GHULinkButton.m */,
 				1AC1EA691AD28F8D000C063D /* Main.storyboard */,
 				1AC1EA6C1AD28F8D000C063D /* Images.xcassets */,
 				1AC1EA6E1AD28F8D000C063D /* LaunchScreen.xib */,
@@ -225,6 +230,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1ADE88EF1AD2944500BFCCE7 /* GHUUsersTableViewController.m in Sources */,
+				1ADE88F81AD2A80D00BFCCE7 /* GHULinkButton.m in Sources */,
 				1AC1EA651AD28F8D000C063D /* AppDelegate.m in Sources */,
 				1AC1EA621AD28F8D000C063D /* main.m in Sources */,
 				1ADE88F51AD29ECE00BFCCE7 /* GHUUserTableViewCell.m in Sources */,
