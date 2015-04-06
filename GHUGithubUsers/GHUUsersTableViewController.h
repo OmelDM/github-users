@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  GHUUsersTableViewController.h
 //  GHUGithubUsers
 //
 //  Created by Dmytro Omelchuk on 4/6/15.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface GHUUsersTableViewController : UITableViewController
 
 @end
-

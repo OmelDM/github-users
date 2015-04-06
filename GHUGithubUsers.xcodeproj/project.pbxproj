@@ -9,11 +9,11 @@
 /* Begin PBXBuildFile section */
 		1AC1EA621AD28F8D000C063D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC1EA611AD28F8D000C063D /* main.m */; };
 		1AC1EA651AD28F8D000C063D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC1EA641AD28F8D000C063D /* AppDelegate.m */; };
-		1AC1EA681AD28F8D000C063D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC1EA671AD28F8D000C063D /* ViewController.m */; };
 		1AC1EA6B1AD28F8D000C063D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AC1EA691AD28F8D000C063D /* Main.storyboard */; };
 		1AC1EA6D1AD28F8D000C063D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AC1EA6C1AD28F8D000C063D /* Images.xcassets */; };
 		1AC1EA701AD28F8D000C063D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AC1EA6E1AD28F8D000C063D /* LaunchScreen.xib */; };
 		1AC1EA7C1AD28F8E000C063D /* GHUGithubUsersTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC1EA7B1AD28F8E000C063D /* GHUGithubUsersTests.m */; };
+		1ADE88EF1AD2944500BFCCE7 /* GHUUsersTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ADE88EE1AD2944500BFCCE7 /* GHUUsersTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,14 +32,14 @@
 		1AC1EA611AD28F8D000C063D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1AC1EA631AD28F8D000C063D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1AC1EA641AD28F8D000C063D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		1AC1EA661AD28F8D000C063D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		1AC1EA671AD28F8D000C063D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		1AC1EA6A1AD28F8D000C063D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1AC1EA6C1AD28F8D000C063D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		1AC1EA6F1AD28F8D000C063D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		1AC1EA751AD28F8E000C063D /* GHUGithubUsersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GHUGithubUsersTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AC1EA7A1AD28F8E000C063D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1AC1EA7B1AD28F8E000C063D /* GHUGithubUsersTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GHUGithubUsersTests.m; sourceTree = "<group>"; };
+		1ADE88ED1AD2944500BFCCE7 /* GHUUsersTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHUUsersTableViewController.h; sourceTree = "<group>"; };
+		1ADE88EE1AD2944500BFCCE7 /* GHUUsersTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHUUsersTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,8 +83,8 @@
 			children = (
 				1AC1EA631AD28F8D000C063D /* AppDelegate.h */,
 				1AC1EA641AD28F8D000C063D /* AppDelegate.m */,
-				1AC1EA661AD28F8D000C063D /* ViewController.h */,
-				1AC1EA671AD28F8D000C063D /* ViewController.m */,
+				1ADE88ED1AD2944500BFCCE7 /* GHUUsersTableViewController.h */,
+				1ADE88EE1AD2944500BFCCE7 /* GHUUsersTableViewController.m */,
 				1AC1EA691AD28F8D000C063D /* Main.storyboard */,
 				1AC1EA6C1AD28F8D000C063D /* Images.xcassets */,
 				1AC1EA6E1AD28F8D000C063D /* LaunchScreen.xib */,
@@ -219,7 +219,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1AC1EA681AD28F8D000C063D /* ViewController.m in Sources */,
+				1ADE88EF1AD2944500BFCCE7 /* GHUUsersTableViewController.m in Sources */,
 				1AC1EA651AD28F8D000C063D /* AppDelegate.m in Sources */,
 				1AC1EA621AD28F8D000C063D /* main.m in Sources */,
 			);
@@ -414,6 +414,7 @@
 				1AC1EA811AD28F8E000C063D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1AC1EA821AD28F8E000C063D /* Build configuration list for PBXNativeTarget "GHUGithubUsersTests" */ = {
 			isa = XCConfigurationList;
@@ -422,6 +423,7 @@
 				1AC1EA841AD28F8E000C063D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
