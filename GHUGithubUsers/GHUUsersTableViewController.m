@@ -7,6 +7,7 @@
 //
 
 #import "GHUUsersTableViewController.h"
+#import "GHUUserTableViewCell.h"
 
 NSString *const kGithubUsersLink = @"https://api.github.com/users";
 
@@ -81,13 +82,35 @@ NSString *const kGithubUsersLink = @"https://api.github.com/users";
 
 - (UITableViewCell *)tableView:(UITableView *)aTableView cellForRowAtIndexPath:(NSIndexPath *)anIndexPath
 {
-    UITableViewCell *theCell = [aTableView dequeueReusableCellWithIdentifier:@"UserCellReuseIdentifier" forIndexPath:anIndexPath];
+    GHUUserTableViewCell *theCell = [aTableView dequeueReusableCellWithIdentifier:@"UserCellReuseIdentifier" forIndexPath:anIndexPath];
 
 	NSDictionary *theUser = self.users[anIndexPath.row];
 	
-	theCell.textLabel.text = theUser[@"login"];
-	theCell.detailTextLabel.text = theUser[@"html_url"];
-	theCell.imageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:theUser[@"avatar_url"]]]];
+	theCell.login.text = theUser[@"login"];
+	theCell.link.text = theUser[@"html_url"];
+	[theCell.downloadIndicator startAnimating];
+	
+	[[[NSURLSession sharedSession] dataTaskWithURL:[NSURL URLWithString:theUser[@"avatar_url"]]
+				completionHandler:^(NSData *aData, NSURLResponse *aResponse, NSError *anError)
+	{
+		if (nil != anError)
+		{
+		
+		}
+		
+		UIImage *theFoto = [UIImage imageWithData:aData];
+		
+		if (nil != theFoto)
+		{
+			dispatch_async(dispatch_get_main_queue(),
+			^{
+				theCell.foto.image = theFoto;
+				[theCell.downloadIndicator stopAnimating];
+				theCell.downloadIndicator.hidden = YES;
+			});
+		}
+		
+	}] resume];
 	
     return theCell;
 }
