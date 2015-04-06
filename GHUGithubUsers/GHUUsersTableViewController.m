@@ -15,6 +15,7 @@ NSString *const kGithubUsersLink = @"https://api.github.com/users";
 @interface GHUUsersTableViewController ()
 
 @property (nonatomic, strong) NSArray *users;
+@property (nonatomic, strong) NSMutableDictionary *cache;
 
 @end
 
@@ -23,6 +24,8 @@ NSString *const kGithubUsersLink = @"https://api.github.com/users";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+	
+	self.cache = [NSMutableDictionary new];
 	
 	[[[NSURLSession sharedSession] dataTaskWithURL:[NSURL URLWithString:kGithubUsersLink]
 				completionHandler:^(NSData *aData, NSURLResponse *aResponse, NSError *anError)
@@ -92,34 +95,72 @@ NSString *const kGithubUsersLink = @"https://api.github.com/users";
 	[theCell.link setTitle:theLink forState:UIControlStateNormal];
 	theCell.link.link = [NSURL URLWithString:theLink];
 
-	
 	[theCell.downloadIndicator startAnimating];
 	
-	[[[NSURLSession sharedSession] dataTaskWithURL:[NSURL URLWithString:theUser[@"avatar_url"]]
-				completionHandler:^(NSData *aData, NSURLResponse *aResponse, NSError *anError)
+	NSString *theAvatarLink = theUser[@"avatar_url"];
+	NSString *thePathToAvatar = self.cache[theAvatarLink];
+	
+	if (nil != thePathToAvatar)
 	{
-		UIImage *theFoto = nil;
-		
-		if (nil != anError || nil == aData)
-		{
-			theFoto = [UIImage imageNamed:@"Image_Placeholder"];
-		}
-		else
-		{
-			theFoto = [UIImage imageWithData:aData];
-		}
-		
-		if (nil != theFoto)
-		{
+		dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0),
+		^{
+			UIImage *theAvatar = [UIImage imageNamed:@"Image_Placeholder"];
+			NSData *theAvatarData = [NSData dataWithContentsOfFile:thePathToAvatar];
+			
+			if (nil != theAvatarData)
+			{
+				UIImage *theAvatarImage = [UIImage imageWithData:theAvatarData];
+				if (nil != theAvatarImage)
+				{
+					theAvatar = theAvatarImage;
+				}
+			}
+
 			dispatch_async(dispatch_get_main_queue(),
 			^{
-				theCell.foto.image = theFoto;
+				theCell.foto.image = theAvatar;
 				[theCell.downloadIndicator stopAnimating];
 				theCell.downloadIndicator.hidden = YES;
 			});
-		}
-	}] resume];
+		});
+		
+	}
+	else
+	{
+		[[[NSURLSession sharedSession] dataTaskWithURL:[NSURL URLWithString:theAvatarLink]
+				completionHandler:^(NSData *aData, NSURLResponse *aResponse, NSError *anError)
+		{
+			UIImage *theAvatar = [UIImage imageNamed:@"Image_Placeholder"];
+			
+			if (nil == anError && nil != aData)
+			{
+				UIImage *theAvatarImage = [UIImage imageWithData:aData];
+				if (nil != theAvatarImage)
+				{
+					theAvatar = theAvatarImage;
+					// store to cache
+					NSString *theDirectory = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory,
+								NSUserDomainMask, YES) lastObject];
+					NSString *theStorePath = [theDirectory stringByAppendingFormat:@"/%@/%ld.jpeg",
+								[[NSBundle mainBundle] bundleIdentifier], [theAvatarLink hash]];
+					
+					if ([aData writeToFile:theStorePath atomically:NO])
+					{
+						[self.cache setObject:theStorePath forKey:theAvatarLink];
+					}
+				}
+			}
+
+			dispatch_async(dispatch_get_main_queue(),
+			^{
+				theCell.foto.image = theAvatar;
+				[theCell.downloadIndicator stopAnimating];
+				theCell.downloadIndicator.hidden = YES;
+			});
+		}] resume];
 	
+	}
+
     return theCell;
 }
 
