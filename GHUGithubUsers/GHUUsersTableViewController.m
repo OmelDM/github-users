@@ -98,12 +98,16 @@ NSString *const kGithubUsersLink = @"https://api.github.com/users";
 	[[[NSURLSession sharedSession] dataTaskWithURL:[NSURL URLWithString:theUser[@"avatar_url"]]
 				completionHandler:^(NSData *aData, NSURLResponse *aResponse, NSError *anError)
 	{
-		if (nil != anError)
+		UIImage *theFoto = nil;
+		
+		if (nil != anError || nil == aData)
 		{
-		
+			theFoto = [UIImage imageNamed:@"Image_Placeholder"];
 		}
-		
-		UIImage *theFoto = [UIImage imageWithData:aData];
+		else
+		{
+			theFoto = [UIImage imageWithData:aData];
+		}
 		
 		if (nil != theFoto)
 		{
@@ -114,7 +118,6 @@ NSString *const kGithubUsersLink = @"https://api.github.com/users";
 				theCell.downloadIndicator.hidden = YES;
 			});
 		}
-		
 	}] resume];
 	
     return theCell;
